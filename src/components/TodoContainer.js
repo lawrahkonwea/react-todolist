@@ -7,6 +7,7 @@ import "../App.css"
 class TodoContainer extends React.Component {
 
     state = {
+      // todos: [],
         todos: [
           {
             id: uuidv4(),
@@ -35,6 +36,8 @@ class TodoContainer extends React.Component {
         this.setState(prevState => ({
           todos: prevState.todos.map(todo => {
             if (todo.id === id) {
+
+
               return {
                 ...todo,
                 completed: !todo.completed,
@@ -63,6 +66,13 @@ class TodoContainer extends React.Component {
           todos: [...this.state.todos, newTodo]
         });
       };
+
+      componentDidMount() {
+        fetch("https://jsonplaceholder.typicode.com/todos")
+          .then(response => response.json())
+          .then(data => console.log(data));
+      }
+
        render() {
         return (
           <div className="container">

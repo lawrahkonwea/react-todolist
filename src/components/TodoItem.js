@@ -9,9 +9,12 @@ function TodoItem(props) {
     opacity: 0.4,
     textDecoration: "line-through",
   }
+
   const { completed, id, title } = props.todo
+  
   return (
     <li className={styles.item}>
+      
     <input
       type="checkbox"
       className={styles.checkbox}
@@ -22,6 +25,7 @@ function TodoItem(props) {
     <span style={completed ? completedStyle : null}>{title}</span>
   </li>
   )
+
   }
 
 

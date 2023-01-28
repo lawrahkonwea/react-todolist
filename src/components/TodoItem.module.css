@@ -21,3 +21,11 @@
     width: 50px;
     margin: -10px 0 0 10px;
   }
+
+  .listing {
+    display: none;
+  }
+
+  .list-on {
+    display: block;
+  }
